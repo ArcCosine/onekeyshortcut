@@ -1,10 +1,10 @@
 {
 	"manifest_version" : 2,
-	"name" : "One-key shortcut support",
-	"description" : "One-key shortcut like Presto version's Opera",
-	"version" : "0.1",
+	"name" : "One-key short cut support",
+	"description" : "One-key short cut like Presto version's Opera",
+	"version" : "0.0",
 	"permissions" : [
-		"tabs","http://*/*"
+		"tabs","http://*/*","https://*/*"
 	],
 	"background" : {
 		"scripts" : ["js/background.js"],
@@ -12,7 +12,8 @@
 	},
 	"content_scripts" : [
 		{
-			"matches" : ["http://*/*"],
+			"matches" : ["http://*/*","https://*/*"],
+			"css" : ["css/content.css"],
 			"js" : ["js/content.js"],
 			"run_at" : "document_start"
 		}
