@@ -1,0 +1,20 @@
+{
+	"manifest_version" : 2,
+	"name" : "One-key shortcut support",
+	"description" : "One-key shortcut like Presto version's Opera",
+	"version" : "0.1",
+	"permissions" : [
+		"tabs","http://*/*"
+	],
+	"background" : {
+		"scripts" : ["js/background.js"],
+		"persistent" : false	
+	},
+	"content_scripts" : [
+		{
+			"matches" : ["http://*/*"],
+			"js" : ["js/content.js"],
+			"run_at" : "document_start"
+		}
+	]
+}
